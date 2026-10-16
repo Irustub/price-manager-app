@@ -152,3 +152,15 @@ tr.best { background: #12351d; color: #39ff14; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
+
+.address-search { position: relative; flex: 1 1 100%; }
+.address-search input { width: 100%; box-sizing: border-box; }
+.address-suggestions {
+  position: absolute; left: 0; right: 0; top: 100%; z-index: 1000;
+  margin: 4px 0 0; padding: 0; list-style: none;
+  background: #0a0e27; border: 1px solid #00ff41; border-radius: 6px;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.4); max-height: 300px; overflow-y: auto;
+}
+.address-suggestions li { padding: 10px 12px; cursor: pointer; display: flex; flex-direction: column; gap: 2px; }
+.address-suggestions li:hover { background: rgba(0, 255, 65, 0.15); }
+.address-suggestions .address-empty { cursor: default; }
