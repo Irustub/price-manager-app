@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Personal single-user app without login: restrict this before sharing the URL.
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

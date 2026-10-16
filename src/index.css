@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f5f6f8; color: #222; }
+header { background: #1f3a5f; color: #fff; padding: 0.5rem 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+header h1 { font-size: 1.2rem; margin: 0; }
+nav { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+nav a { color: #cfe0ff; text-decoration: none; padding: 0.25rem 0.5rem; border-radius: 4px; }
+nav a.active { background: #fff; color: #1f3a5f; }
+main { max-width: 900px; margin: 0 auto; padding: 1rem; }
+.card { background: #fff; border-radius: 8px; padding: 0.75rem 1rem; margin: 0.75rem 0; box-shadow: 0 1px 3px #0002; }
+.form { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.5rem 0; }
+.row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+input, select, button { padding: 0.4rem 0.6rem; font: inherit; }
+button { cursor: pointer; border: 0; border-radius: 4px; background: #2d6cdf; color: #fff; margin-left: 0.25rem; }
+button.danger { background: #c0392b; }
+.map { height: 320px; border-radius: 8px; }
+.notice { background: #fff3cd; margin: 0; padding: 0.5rem 1rem; }
+table { width: 100%; border-collapse: collapse; }
+td, th { text-align: left; padding: 0.3rem; border-bottom: 1px solid #eee; }
+tr.best { background: #e6f7e9; font-weight: 600; }
+@media (max-width: 600px) { .form > * { flex: 1 1 100%; } }
