@@ -4,6 +4,7 @@ export interface Supplier extends Entity {
   name: string
   lat: number
   lng: number
+  address?: string
 }
 
 export type CategoryKind = 'sheet' | 'object'
