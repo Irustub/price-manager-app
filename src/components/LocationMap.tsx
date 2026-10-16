@@ -1,4 +1,5 @@
-import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet'
+import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet'
+import { useEffect } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import icon from 'leaflet/dist/images/marker-icon.png'
@@ -20,6 +21,16 @@ function ClickHandler({ onPick }: { onPick: (lat: number, lng: number) => void }
   return null
 }
 
+function Recenter({ target }: { target: { lat: number; lng: number } | null | undefined }) {
+  const map = useMap()
+  const lat = target?.lat
+  const lng = target?.lng
+  useEffect(() => {
+    if (lat !== undefined && lng !== undefined) map.setView([lat, lng], Math.max(map.getZoom(), 16))
+  }, [lat, lng, map])
+  return null
+}
+
 interface Props {
   points: Point[]
   onPick?: (lat: number, lng: number) => void
@@ -35,6 +46,7 @@ export default function LocationMap({ points, onPick, selected }: Props) {
         attribution="&copy; OpenStreetMap contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      <Recenter target={selected} />
       {onPick && <ClickHandler onPick={onPick} />}
       {points.map((p) => (
         <Marker key={p.id} position={[p.lat, p.lng]}>
