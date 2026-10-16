@@ -152,3 +152,8 @@ tr.best { background: #12351d; color: #39ff14; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
+
+.flag-icon { background: none; border: none; }
+.suggestions { list-style: none; margin: 0; padding: 0; flex: 1 1 100%; }
+.suggestions li { cursor: pointer; padding: 6px 8px; }
+.suggestions li:hover { background: rgba(128, 128, 128, 0.2); }
